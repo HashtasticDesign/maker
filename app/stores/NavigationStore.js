@@ -30,6 +30,3 @@ store.setAll([{
 }]);
 
 export default store;
-
-
-

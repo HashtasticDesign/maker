@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
     var year = (new Date()).getFullYear();
     return (
       <footer className={'footer'}>
-        &copy; Your Company&nbsp;{year}
+        &copy; Hashtastic Design&nbsp;{year}
       </footer>
     );
   }
