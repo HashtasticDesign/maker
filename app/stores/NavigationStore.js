@@ -27,6 +27,12 @@ store.setAll([{
 }, {
   route: 'about',
   title: 'About'
+}, {
+  route: 'routes',
+  title: 'Routes'
+}, {
+  route: 'styles',
+  title: 'Styles'
 }]);
 
 export default store;
