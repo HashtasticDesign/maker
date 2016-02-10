@@ -10,7 +10,7 @@ class GlobalColors extends React.Component {
 
   render() {
     return (
-      <div className={'style__colors'}>
+      <div>
         {this.state.colors.map(color => {
           return (
             <div>

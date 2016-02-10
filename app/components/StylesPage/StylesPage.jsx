@@ -8,7 +8,7 @@ class StylesPage extends React.Component {
       <div className={'page__styles'}>
         <h1>Styles</h1>
         <ul>
-          <li>
+          <li className={'style__colors'}>
             Colors:
             <GlobalColors />
           </li>

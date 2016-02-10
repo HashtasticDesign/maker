@@ -6,6 +6,8 @@ import {
 } from 'react-router';
 
 import App from './components/App/App';
+
+// Admin Pages
 import HomePage from './components/HomePage/HomePage';
 import AboutPage from './components/AboutPage/AboutPage';
 import RoutesPage from './components/RoutesPage/RoutesPage';
