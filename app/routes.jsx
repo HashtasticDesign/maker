@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   Route,
-  DefaultRoute
+  IndexRoute
 } from 'react-router';
 
 import App from './components/App/App';
@@ -13,11 +13,26 @@ import AboutPage from './components/AboutPage/AboutPage';
 import RoutesPage from './components/RoutesPage/RoutesPage';
 import StylesPage from './components/StylesPage/StylesPage';
 
+let auth = {
+  admin: function() {
+    return false;
+  },
+  loggedIn: function() {
+    return false;
+  }
+};
+
+function requireAdmin(nextState, replace) {
+  if (!auth.loggedIn() || !auth.admin()) {
+    replace('/');
+  }
+}
+
 export default (
-  <Route handler={App}>
-    <Route handler={StylesPage} name="styles" path="/styles" />
-    <Route handler={RoutesPage} name="routes" path="/routes" />
-    <Route handler={AboutPage} name="about" path="/about" />
-    <DefaultRoute handler={HomePage} name="home" />
+  <Route path="/" component={App}>
+    <Route component={StylesPage} path="styles" onEnter={requireAdmin} />
+    <Route component={RoutesPage} path="routes" onEnter={requireAdmin} />
+    <Route component={AboutPage} path="about" />
+    <IndexRoute component={HomePage} />
   </Route>
 );

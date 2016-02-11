@@ -5,9 +5,12 @@ import 'normalize.css/normalize.css';
 import './scss/app.scss';
 
 import React from 'react';
-import Router from 'react-router';
+import {
+  Router,
+  browserHistory
+} from 'react-router';
+
 import routes from './routes';
 
-Router.run(routes, function (Handler) {
-  React.render(<Handler/>, document.getElementById('app'));
-});
+
+React.render(<Router history={browserHistory}>{routes}</Router>, document.getElementById('app'));

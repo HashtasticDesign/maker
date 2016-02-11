@@ -9,21 +9,16 @@ export default class Navigation extends React.Component {
     selectedIndex: null
   }
 
-  static contextTypes = {
-    router: React.PropTypes.func.isRequired
-  };
-
   static propTypes = {
     pages: React.PropTypes.array.isRequired
   };
 
   getSelectedIndex() {
-    let router = this.context.router;
     let pages = this.props.pages;
     let i = pages.length - 1;
     for (; i >= 0; i--) {
       let page = pages[i];
-      let isPageActive = Boolean(page.route && router.isActive(page.route));
+      let isPageActive = Boolean(page.route);
       if (isPageActive) { return i; }
     }
     return -1;

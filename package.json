@@ -29,7 +29,8 @@
     "flux": "^2.0.3",
     "normalize.css": "^3.0.3",
     "react": "^0.13.3",
-    "react-router": "^0.13.3"
+    "react-router": "^1.0.3",
+    "history": "^1.17.0"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -67,7 +68,7 @@
     "postcss-loader": "^0.5.1",
     "react-hot-loader": "^1.2.8",
     "rimraf": "^2.4.1",
-    "sass-loader": "^1.0.2",
+    "sass-loader": "^2.0.1",
     "sinon": "^1.15.4",
     "source-map-support": "^0.3.2",
     "style-loader": "^0.12.3",

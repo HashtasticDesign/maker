@@ -22,7 +22,7 @@ class NavigationStore extends BaseStore {
 let store = new NavigationStore();
 
 store.setAll([{
-  route: 'home',
+  route: '',
   title: 'Home'
 }, {
   route: 'about',

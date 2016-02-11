@@ -1,7 +1,6 @@
 import './_App.scss';
 
 import React from 'react';
-import { RouteHandler } from 'react-router';
 import NavigationStore from '../../stores/NavigationStore';
 import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
@@ -20,7 +19,7 @@ class App extends React.Component {
     return (
       <div className={'app'}>
         <Navigation pages={this.state.pages} />
-        <RouteHandler key={this.context.router.getCurrentPath()} />
+        {this.props.children}
         <Footer />
       </div>
     );
@@ -28,7 +27,7 @@ class App extends React.Component {
 }
 
 App.contextTypes = {
-  router: React.PropTypes.func.isRequired
+  router: React.PropTypes.object.isRequired
 };
 
 export default App;
