@@ -15,9 +15,9 @@ class RoutesPage extends React.Component {
             <th>Name</th>
             <th>URL</th>
           </tr>
-          {this.state.pages.map(function(page) {
+          {this.state.pages.map((page, index) => {
             return (
-              <tr>
+              <tr key={'route-' + index}>
                 <td>{page.title}</td>
                 <td>/{page.route}</td>
               </tr>

@@ -13,22 +13,9 @@ export default class Navigation extends React.Component {
     pages: React.PropTypes.array.isRequired
   };
 
-  getSelectedIndex() {
-    let pages = this.props.pages;
-    let i = pages.length - 1;
-    for (; i >= 0; i--) {
-      let page = pages[i];
-      let isPageActive = Boolean(page.route);
-      if (isPageActive) { return i; }
-    }
-    return -1;
-  }
-
-  renderNavItem(selectedIndex, page, index) {
-    let className = null;
-    if (index === selectedIndex) { className = '-selected'; }
+  renderNavItem(page, index) {
     return (
-      <li className={className} key={'page-' + index}>
+      <li key={'page-' + index}>
         <Link to={page.route}>
           {page.title}
         </Link>
@@ -37,11 +24,10 @@ export default class Navigation extends React.Component {
   }
 
   render() {
-    let selectedIndex = this.getSelectedIndex();
     return (
       <ul className={'navigation'}>
         {this.props.pages.map(
-          this.renderNavItem.bind(this, selectedIndex)
+          this.renderNavItem.bind(this)
         )}
       </ul>
     );

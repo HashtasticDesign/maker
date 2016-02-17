@@ -12,5 +12,4 @@ import {
 
 import routes from './routes';
 
-
 React.render(<Router history={browserHistory}>{routes}</Router>, document.getElementById('app'));

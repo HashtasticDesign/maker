@@ -11,9 +11,9 @@ class GlobalColors extends React.Component {
   render() {
     return (
       <div>
-        {this.state.colors.map(color => {
+        {this.state.colors.map((color, index) => {
           return (
-            <div>
+            <div key={'color-' + index}>
               <h5>{color.title}</h5>
               <div className={'color-box'} style={{ backgroundColor: color.value }}></div>
             </div>
